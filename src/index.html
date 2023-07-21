@@ -1,13 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1">
+  <meta name="description" content="Aplicación web creada para Análisis de texto.">
+  <meta name="theme-color" content="#ffffff"/>
+  <link rel="icon" type="image/x-icon" href="img/favicon.ico">
   <title>Analizador de texto</title>
+  <link rel="apple-touch-icon" href="img/ios/192.png">
+  <link rel='manifest' href='manifest.json'>
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
+  <header>
+    <h1>Analizador de Texto</h1>
+  </header>
+  <main>
+    <div>
+      <ul>
+        <li class="metrics">Caracteres</li>
+        <li class="metrics">Caracteres sin espacios</li>
+        <li class="metrics">Palabras</li>
+        <li class="metrics">Números</li>
+        <li class="metrics">Suma de Números</li>
+        <li class="metrics">Promedio longitud</li>
+      </ul>
+    </div>
+    <div id="textSpace">
+      <textarea name="user-input" cols="40" rows="10"></textarea>
+    </div>
+    <div id="btnReset">
+      <button id="button-reset">Limpiar</button>
+    </div>
+  </main>
+  <footer>
+    <p>Desarrollado por: <a href="https://linkedin.com/in/andresbolivar07">Andres Bolivar</a></p>
+  </footer>
   <script src="index.js" type="module"></script>
 </body>
 </html>
