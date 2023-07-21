@@ -1,6 +1,26 @@
 const analyzer = {  
-  getWordCount: (text) => {
-    //TODO: esta función debe retornar el recuento de palabras que se encuentran en el parámetro `text` de tipo `string`.
+  getWordCount: (getText) => {
+    const textNormalizer = getText.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+
+    const convertText = textNormalizer.toLowerCase().replace(/[^\w\s]/g, '');
+
+    const words = convertText.split(/\s+/);
+
+    const counterWords = {};
+
+    words.forEach(word => {
+      if (word in counterWords) {
+        counterWords[word]++;
+      }else {
+        counterWords[word] = 1;
+      }
+    });
+
+    let totalWords = 0;
+    for (const word in counterWords) {
+      totalWords += counterWords[word];
+    }
+    return totalWords;
   },
   getCharacterCount: (text) => {
     //TODO: esta función debe retornar el recuento de caracteres que se encuentran en el parámetro `text` de tipo `string`.

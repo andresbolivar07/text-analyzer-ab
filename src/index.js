@@ -1,3 +1,9 @@
 import analyzer from './analyzer.js';
 
-//TODO: escuchar eventos del DOM e invocar  los métodos del objeto `analyzer`
+const getTextAnalizer = ()  => {
+    const getText = document.querySelector("textarea").value;
+    const getWordCount = analyzer.getWordCount(getText);
+
+    console.log(getWordCount);
+};
+document.addEventListener('input', getTextAnalizer);
