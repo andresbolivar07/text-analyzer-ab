@@ -1,6 +1,6 @@
 const analyzer = {  
   getWordCount: (getText) => {
-    const textNormalizer = getText.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    const textNormalizer = getText.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 
     const convertText = textNormalizer.toLowerCase().replace(/[^\w\s]/g, '');
 
@@ -22,12 +22,43 @@ const analyzer = {
     }
     return totalWords;
   },
-  getCharacterCount: (text) => {
-    //TODO: esta función debe retornar el recuento de caracteres que se encuentran en el parámetro `text` de tipo `string`.
+  getCharacterCount: (getText) => getText.length,
+    
+  getCharacterCountExcludingSpaces: (getText) => {
+    const withoutSpace = getText.split(" ").join("");
+    
+    const withoutComma = withoutSpace.split(",").join("");
+
+    const withoutdot = withoutComma.split(".").join("");
+
+    const withoutSemicolon = withoutdot.split(";").join("");
+
+    const withoutTwoPoints = withoutSemicolon.split(":").join("");
+
+    const withoutSlash = withoutTwoPoints.split("/").join("");
+
+    const withoutAt = withoutSlash.split("@").join("");
+
+    const withoutquestionMark = withoutAt.split("?").join("");
+
+    const withoutquestionMarkTwo = withoutquestionMark.split("¿").join("");
+
+    const withoutExclamationMark = withoutquestionMarkTwo.split("!").join("");
+
+    const withoutQuotationMarks = withoutExclamationMark.split('"').join("");
+
+    const withoutApostrophe = withoutQuotationMarks.split("'").join("");
+
+    const withoutHyphen = withoutApostrophe.split("-").join("");
+
+    const withoutUnderscore = withoutHyphen.split("_").join("");
+
+    const withoutEquals = withoutUnderscore.split("=").join("").length;
+    
+    return withoutEquals;
+    
   },
-  getCharacterCountExcludingSpaces: (text) => {
-    //TODO: esta función debe retornar el recuento de caracteres excluyendo espacios y signos de puntuación que se encuentran en el parámetro `text` de tipo `string`.
-  },
+
   getAverageWordLength: (text) => {    
     //TODO: esta función debe retornar la longitud media de palabras que se encuentran en el parámetro `text` de tipo `string`.
   },
