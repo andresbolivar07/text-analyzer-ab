@@ -53,20 +53,38 @@ const analyzer = {
 
     const withoutUnderscore = withoutHyphen.split("_").join("");
 
-    const withoutEquals = withoutUnderscore.split("=").join("").length;
+    const withoutEquals = withoutUnderscore.split("=").join("");
+
+    const withoutParenthesisR = withoutEquals.split( "(" ).join("");
+
+    const withoutParenthesisL = withoutParenthesisR.split( ")" ).join("").length;
     
-    return withoutEquals;
+    return withoutParenthesisL;
     
   },
 
-  getAverageWordLength: (text) => {    
-    //TODO: esta función debe retornar la longitud media de palabras que se encuentran en el parámetro `text` de tipo `string`.
+  getAverageWordLength: (getText) => (analyzer.getCharacterCountExcludingSpaces(getText) / analyzer.getWordCount(getText)).toFixed(2),
+
+  getNumberCount: (getText) => {
+    let count = 0;
+
+    for (let i = 0; i < getText.length; i++) {
+      if (getText[i].charCodeAt(0) >= 48 && getText[i].charCodeAt(0) <= 57) {
+        count++;
+      }
+    }
+    return count;
   },
-  getNumberCount: (text) => {
-    //TODO: esta función debe retornar cúantos números se encuentran en el parámetro `text` de tipo `string`.
-  },
-  getNumberSum: (text) => {
-    //TODO: esta función debe retornar la suma de todos los números que se encuentran en el parámetro `text` de tipo `string`.
+  getNumberSum: (getText) => {
+
+    let total = 0;
+    for (let i = 0; i < getText.length; i++) {
+      if (getText[i].charCodeAt(0) >= 48 && getText[i].charCodeAt(0) <= 57) {
+        total += parseInt(getText[i]);
+      }
+    }
+
+    return total;
   },
 };
 

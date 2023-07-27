@@ -8,7 +8,11 @@ const getTextAnalizer = ()  => {
     document.getElementById("totalCharacters").innerHTML = getCharacterCount;
     const getCharacterCountExcludingSpaces = analyzer.getCharacterCountExcludingSpaces(getText);
     document.getElementById("excludingSpaces").innerHTML = getCharacterCountExcludingSpaces;
-
-    
+    const getAverageWordLength = analyzer.getAverageWordLength(getText);
+    document.getElementById("averageWords").innerHTML = getAverageWordLength;
+    const getNumberCount = analyzer.getNumberCount(getText);
+    document.getElementById("numbers").innerHTML = getNumberCount;
+    const getNumberSum = analyzer.getNumberSum(getText);
+    document.getElementById("sumNumbers").innerHTML = getNumberSum;
 };
 document.addEventListener('input', getTextAnalizer);
