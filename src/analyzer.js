@@ -66,25 +66,25 @@ const analyzer = {
   getAverageWordLength: (getText) => (analyzer.getCharacterCountExcludingSpaces(getText) / analyzer.getWordCount(getText)).toFixed(2),
 
   getNumberCount: (getText) => {
+    
+    const text = getText.split(" ");
     let count = 0;
 
-    for (let i = 0; i < getText.length; i++) {
-      if (getText[i].charCodeAt(0) >= 48 && getText[i].charCodeAt(0) <= 57) {
+    for (let i = 0; i < text.length; i++) {
+      if (!isNaN(text[i])) {
         count++;
       }
     }
     return count;
   },
+
   getNumberSum: (getText) => {
 
-    let total = 0;
-    for (let i = 0; i < getText.length; i++) {
-      if (getText[i].charCodeAt(0) >= 48 && getText[i].charCodeAt(0) <= 57) {
-        total += parseInt(getText[i]);
-      }
-    }
+    const text = getText.split(" ");
 
-    return total;
+    const numbersArray = text.filter(Number);
+
+    return numbersArray.length === 0 ? 0 : numbersArray.reduce((a,b) => parseFloat(a) + parseFloat(b));
   },
 };
 
