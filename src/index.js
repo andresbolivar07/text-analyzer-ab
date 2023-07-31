@@ -24,5 +24,5 @@ const restarTextArea = () => {
   });
 }
 
-const restarbtn = document.getElementById("button-reset")
+const restarbtn = document.getElementById("reset-button")
 restarbtn.addEventListener('click', restarTextArea);
