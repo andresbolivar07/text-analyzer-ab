@@ -1,0 +1,75 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+header {
+    width: 100%;
+}
+
+header > h1 {
+    display: flex;
+    justify-content: center;
+    padding: 6%;
+}
+
+ul {
+    padding: 2%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.list {
+    background-color: white;
+}
+
+ul > li {
+    list-style: none;
+    margin: 3px;
+}
+
+.metrics {
+
+    padding: 1%;
+    width: auto;
+    border: 1px solid #33E6FF;
+    border-radius: 8px;
+    background-color: #33E6FF;
+}
+
+textarea[name="user-input"] {
+    font-style: italic;
+}
+
+#textSpace {
+    display: flex;
+    justify-content: center;
+    padding-top: 3%;
+    padding-bottom: 4%;
+}
+
+#btnReset {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10%;
+}
+#reset-button {
+    padding: 2%;
+    width: 40%;
+    border: 8px solid #33E6FF;
+    border-radius: 10px;
+    background-color: #33E6FF;
+    font-size: 1em;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
