@@ -1,27 +1,6 @@
-const analyzer = {  
-  getWordCount: (getText) => {
-    const textNormalizer = getText.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+const analyzer = { 
+  getWordCount: (getText) => getText.split(' ').length,
 
-    const convertText = textNormalizer.toLowerCase().replace(/[^\w\s]/g, '');
-
-    const words = convertText.split(/\s+/);
-
-    const counterWords = {};
-
-    words.forEach(word => {
-      if (word in counterWords) {
-        counterWords[word]++;
-      }else {
-        counterWords[word] = 1;
-      }
-    });
-
-    let totalWords = 0;
-    for (const word in counterWords) {
-      totalWords += counterWords[word];
-    }
-    return totalWords;
-  },
   getCharacterCount: (getText) => getText.length,
     
   getCharacterCountExcludingSpaces: (getText) => {
@@ -63,7 +42,17 @@ const analyzer = {
     
   },
 
-  getAverageWordLength: (getText) => (analyzer.getCharacterCountExcludingSpaces(getText) / analyzer.getWordCount(getText)).toFixed(2),
+  getAverageWordLength: (getText) => {
+    const completeText = getText.toLowerCase();
+    let count = 0;
+
+    for (let i = 0; i < completeText.length; i++) {
+      if (completeText[i].charCodeAt(0) >= 33 ) {
+        count++
+      }
+    }
+    return parseFloat((count / analyzer.getWordCount(getText)).toFixed(2));
+  },
 
   getNumberCount: (getText) => {
     

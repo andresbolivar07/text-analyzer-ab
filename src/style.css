@@ -3,6 +3,10 @@
     padding: 0%;
 }
 
+header {
+    width: 100%;
+}
+
 header > h1 {
     display: flex;
     justify-content: center;
@@ -14,6 +18,10 @@ ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+.list {
+    background-color: white;
 }
 
 ul > li {
@@ -28,8 +36,13 @@ ul > li {
     border: 1px solid #33E6FF;
     border-radius: 8px;
     background-color: #33E6FF;
-    
-}#textSpace {
+}
+
+textarea[name="user-input"] {
+    font-style: italic;
+}
+
+#textSpace {
     display: flex;
     justify-content: center;
     padding-top: 3%;
