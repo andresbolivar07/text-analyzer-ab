@@ -54,7 +54,7 @@ textarea[name="user-input"] {
     justify-content: center;
     padding-bottom: 10%;
 }
-#button-reset {
+#reset-button {
     padding: 2%;
     width: 40%;
     border: 8px solid #33E6FF;
