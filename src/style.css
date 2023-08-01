@@ -39,8 +39,15 @@ ul > li {
     
 }
 
+label {
+    
+    justify-content: center;
+    text-align: center;
+    font-size: 1.5em;
+}
+
 textarea[name="user-input"] {
-    font-style: italic;
+    font-style: normal;
 }
 
 #textSpace {
