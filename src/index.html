@@ -9,13 +9,14 @@
   <meta name="theme-color" content="#ffffff"/>
   <link rel="icon" type="image/x-icon" href="img/favicon.ico">
   <title>Analizador de texto</title>
-  <!--<link rel="apple-touch-icon" href="img/ios/192.png">
-  <link rel='manifest' href='manifest.json'> -->
+  <link rel="apple-touch-icon" href="img/ios/192.png">
+  <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
     <h1>Analizador de Texto</h1>
+    <img src="img/Logo_Analyzer-removeb.png" alt="imagen logo analizador de texto.">
   </header>
   <main>
     <div>
@@ -29,7 +30,9 @@
       </ul>
     </div>
     <div id="textSpace">
-      <textarea name="user-input" cols="40" rows="10"></textarea>
+      <label>Escribe un texto:
+        <textarea name="user-input" autofocus cols="40" rows="10"></textarea>
+      </label>
     </div>
     <div id="btnReset">
       <button id="reset-button">Limpiar</button>
@@ -39,5 +42,15 @@
     <p>Desarrollado por: <a href="https://linkedin.com/in/andresbolivar07">Andres Bolivar</a></p>
   </footer>
   <script src="index.js" type="module"></script>
+  <script defer type="text/javascript">
+    if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function() {
+            navigator.serviceWorker
+            .register("/serviceWorker.js")
+            .then(res => console.log("service worker registered"))
+            .catch(err => console.log("service worker not registered", err))
+        })
+    }
+</script>
 </body>
 </html>
