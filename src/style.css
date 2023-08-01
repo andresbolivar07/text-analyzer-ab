@@ -4,13 +4,12 @@
 }
 
 header {
-    width: 100%;
-}
-
-header > h1 {
     display: flex;
     justify-content: center;
-    padding: 6%;
+}
+
+header > img {
+    width: 50%;
 }
 
 ul {
@@ -33,9 +32,11 @@ ul > li {
 
     padding: 1%;
     width: auto;
-    border: 1px solid #33E6FF;
+    border: 1px solid #4d8cf9;
     border-radius: 8px;
-    background-color: #33E6FF;
+    background-color: #4d8cf9;
+    text-align: center;
+    
 }
 
 textarea[name="user-input"] {
@@ -57,9 +58,9 @@ textarea[name="user-input"] {
 #reset-button {
     padding: 2%;
     width: 40%;
-    border: 8px solid #33E6FF;
+    border: 8px solid #4d8cf9;
     border-radius: 10px;
-    background-color: #33E6FF;
+    background-color: #4d8cf9;
     font-size: 1em;
 }
 
